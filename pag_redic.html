@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>JULBANK</title>
+  <style>
+    body {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(120deg, #181716,#D5DA6C);
+    }
+    h1, h2, h3 {
+      margin: 0;
+      color: #FFFFFF;
+      text-align: left;
+    }
+
+    h4 {
+      margin: 0;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    P {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      margin: 0;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    header {
+      bbackground: linear-gradient(120deg, #181716,#D5DA6C);
+      color: #fff;
+      padding: 30px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 30px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main {
+      padding: 20px;
+      background: linear-gradient(120deg, #474747,#030303);
+      margin-bottom: 25px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    section {
+      margin-bottom: 25px;
+    }
+    footer {
+      ackground: linear-gradient(120deg, #181716,#8e9338);
+      color: #fff;
+      padding: 25px;
+      text-align: center;
+    }
+    .seccion-bienvenido {
+      text-align: center;
+      padding: 80px;
+      background-image: url('https://lh3.googleusercontent.com/chat_attachment/ADqTrmyMKliHS1gfw33-8OPNBljd-5TJ_FmDo9Oq6VmrrVGqnmch9HpkSWOlyy1DuuzHhn9MtlhJccR9NXtiumXDnnqHvdpjiolsS9fbfF1ZzLgvRRo-X3g1DYmfnzaF_MCN6mKAmRy4zI9yfDCpV3gOoh3Cu6E93SXrHEoP9MIfDiIx9bVhjJOglrhXRjzZj_mK8s6KxNTNHIbN10hhzejPjivbq8YsjQtlLGI-Mmkney94Xxy4_To1KUUSOPtveLeNAgyuD8j5ntB9CJWp5Al-V0Y_n0YvxXfUcESgzk6IKHsH3YjDK0BYNcIIlAqnZg=w1366-h617');
+      background-position: center center; 
+      background-size: auto;
+    }
+    .seccion-bienvenido h2 {
+      color: #FFFFFF;     
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    .seccion-bienvenido p {
+      font-size: 20px;
+      color:  #FFFFFF;
+    }
+    .seccion-servicios {
+      margin-top: 30px;
+      padding: 20px;
+      background: linear-gradient(150deg, #181716,#D5DA6C);
+      color: #FFFFFF;
+    }
+    .seccion-servicios h2 {
+      margin-bottom: 20px;
+    }
+    .seccion-servicios ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+    .seccion-servicios li {
+      margin-bottom: 10px;
+    }
+    .seccion-servicios p {
+
+      margin-top: 10px;
+    }
+    .seccion-contacto ul {
+      list-style: none;
+      padding: 0;
+    }
+    .seccion-contacto ul li {
+      margin-bottom: 15px;
+    }
+    .seccion-contacto ul li:before {
+      content: "\2022";
+      color: #666;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    .seccion-contacto form {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .seccion-contacto input[type="text"],
+    .seccion-contacto textarea {
+      width: 300px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .seccion-contacto input[type="submit"] {
+      padding: 15px 30px;
+      background-color: #808080;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.5s ease;
+    }
+    .seccion-contacto input[type="submit"]:hover {
+      background-color: #b7b7b7;
+    }
+    .boton {
+      display: inline-block;
+      padding: 15px 20px;
+      background-color: #808080;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.5s ease;
+    }
+    .boton:hover {
+      background: rgb(131, 133, 38);
+      color: #f8f4f4;
+      text-transform: uppercase;
+      font-size: 12px;
+      text-shadow: #D5DA6C;
+      box-shadow: 0 0 20px rgba(98, 98, 102, 0.7);
+    }
+    .imagen {
+      width: 100%;
+      max-width: 800px;
+      display: block;
+      margin: 20px auto;
+    }
+
+    input {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: #0d0d0d;
+      box-shadow: 0 0 20px rgba(33, 33, 33, 0.7);
+      outline: none;
+      font-size: 12px;
+  }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h4>Bienvenido a JULBANK® Group</h4><br>
+    <nav>
+      <ul>
+        <li><a href="pag2.html">Iniciar Sesión</a></li>
+        <li><a href="registro.html">Registro</a></li>
+        <li><a href="indexVIP.php">Servicios VIP</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="seccion-bienvenido">
+    </section>
+
+    <section class="seccion-servicios">
+      <h2>Servicios</h2>
+      <ul>
+        <li>Cuenta de ahorro</li>
+        <li>Tarjeta de crédito</li>
+        <li>Préstamos</li>
+        <li>Asesoría financiera</li>
+      </ul>
+    </section>
+    
+    <section class="seccion-contacto">
+  <h4>Contacto</h4><br>
+  <p>Comunícate con nosotros:</p>
+  <form id="formulario-contacto" action="mensaje.php" method= "post">
+    <input type="text" placeholder="Nombre" required>
+    <input type="text" placeholder="Correo electrónico" required>
+    <textarea placeholder="Mensaje" required></textarea>
+    <input type="submit" value="Enviar mensaje">
+  </form>
+</form>
+  <div id="mensaje-confirmacion"></div>
+</section>
+<head>
+  <script>
+document.getElementById("formulario-contacto").addEventListener("submit", function(event) {
+  event.preventDefault(); 
+  
+    alert("¡Su mensaje ha sido enviado correctamente");
+});
+</script>
+
+</head>
+  </main>
+
+  <footer>
+    <p>2023 JULBANK®</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Registrate</title>
+  <style>
+    body {
+      background: linear-gradient(120deg, #181716,#D5DA6C);
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    form {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      background-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 20px rgba(35, 35, 35, 0.616);
+      padding: 20px 55px;
+      width: 220px;
+      background: rgba(255, 255, 255, 0.511);
+      opacity: 1;
+      border-radius: 25px;
+    }
+
+    form h2 {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      text-align: center;
+      font-size: 20px;
+      color: #0d0d0d;
+      margin: 0;
+      margin-bottom: 25px;
+      position: relative;
+      font-weight: bold;
+
+    }
+
+    .input-wrapper {
+      position: relative;
+      width: 235px;
+      margin-bottom: 30px;
+    }
+
+    .input-icon {
+      position: absolute;
+      height: 30px;
+      width: 30px;
+      left: -40px;
+      top: 50px;
+      transform: translatey(-165%);
+
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      left: -65px;
+    }
+
+    input {
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #0d0d0d;
+    padding: 10px 5px 5px 15px;
+    width: 100%;
+    border-radius: 5px;
+    text-align: lef|;
+    border: 0;
+    box-shadow: 0 0 20px rgba(33, 33, 33, 0.7);
+    outline: none;
+    font-size: 12px;
+
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"]
+    input[type="password"]  {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      text-align: justify;
+    }
+    input[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+    }
+
+    .boton {
+      padding: 15px;
+      background: linear-gradient(
+          90deg,
+          rgb(17, 180, 74) 15%,
+          rgb(2, 78, 44) 100%);
+      box-shadow: 0 0 20px rgba(98, 98, 102, 0.7);
+      color: aliceblue;
+      text-transform: uppercase;
+      font-size: 12px;
+      cursor: pointer;
+  }
+  
+  .boton:hover{
+      background: rgb(131, 133, 38);
+      color: #f8f4f4;
+      text-transform: uppercase;
+      font-size: 12px;
+      text-shadow: #D5DA6C;
+      box-shadow: 0 0 20px rgba(98, 98, 102, 0.7);
+  }
+
+
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("form").submit(function(event) {
+        event.preventDefault();
+        var nombre = $("#nombre").val();
+        var cedula = $("#cedula").val();
+        var fecha_nacimiento = $("#fecha_nacimiento").val();
+        var celular = $("#celular").val();
+        var password = $("#password").val();
+        $.ajax({
+          url: "verificar_con_base_datos.php",
+          type: "POST",
+          dataType: "json",
+          data: { nombre: nombre, cedula: cedula, fecha_nacimiento: fecha_nacimiento, celular: celular, password: password },
+          success: function(response) {
+            console.log(response);
+            if (response.success) {
+              console.log("Los datos son correctos");
+              redirectToPage();
+            } else {
+              console.log("Los datos no son correctos");
+              alert("Los datos ingresados no son correctos.");
+            }
+          },
+          error: function() {
+            console.log("Error en la verificación de datos");
+            alert("Ocurrió un error. Por favor, inténtalo de nuevo más tarde.");
+          }
+        });
+      });
+    });
+
+    function redirectToPage() {
+      window.location.href = "pag2.html";
+    }
+  </script>
+</head>
+<body>
+
+  <form action="#" method="POST">
+    <h2>Formulario de registro JULBANK®</h2>
+
+    <div class="input-wrapper">  
+    <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo" required><br>
+    <img class="input-icon" src="images/user.png" alt="">
+    </div>
+
+    <div class="input-wrapper">  
+    <input type="text" id="cedula" name="cedula" placeholder="Número de documento" required><br>
+    <img class="input-icon" src="images/id-card.png" alt="">
+    </div>
+
+    <div class="input-wrapper">  
+    <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="Fecha de nacimiento (dd/mm/aaaa)" required><br>
+    <img class="input-icon" src="images/calendar.png" alt="">
+    </div>
+
+    <div class="input-wrapper">  
+    <input type="text" id="celular" name="celular" placeholder="Celular" required><br>
+    <img class="input-icon" src="images/smartphone.png" alt="">
+    </div>
+
+    <div class="input-wrapper">  
+    <input type="password" id="password" name="password" placeholder="Crear contraseña" required>
+    <img class="input-icon" src="images/lock.png" alt="">
+    </div>
+
+    <input class="boton" type="submit" value="Registrar">
+  </form>
+</body>
+</html>
